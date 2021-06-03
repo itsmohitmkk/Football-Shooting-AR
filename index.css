@@ -1,0 +1,186 @@
+
+#startlogo1{
+    width:100%;
+  
+    height:100%;
+  }
+  
+  #finalscore{
+    top:40%;
+    width: 50%;
+    position: absolute;
+    margin-left:25%;
+  }
+  
+  #plus1 {
+    width: 10%;
+    height: 10%;
+    display:none;
+    position: absolute;
+    margin-top:20%;
+    margin-left: 45%;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  #Logo {
+    width : 0%;
+    position:absolute;
+    visibility: hidden;
+    top:0%;
+    left:0%;
+  }
+  
+  #finallogo{
+    display: block;
+    margin-top:10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  #finaldiv {
+    background-image: url('assets/bg.png');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 100% 100%;
+    width : 100%;
+    height : 100%;
+    position:absolute;
+    display:none;
+    top:0%;
+    left:0%;
+  }
+  
+  #TimerAnim{
+    position:absolute;
+    visibility: hidden;
+    top:0%;
+    right:0%;
+    width : 0%;
+  }
+  
+  
+  
+  #HitAnim{
+    width : 17%;
+    position:absolute;
+    visibility: hidden;
+    top:12%;
+    right:1%;
+  }
+  
+  
+  #footballball{
+    position:fixed;
+    visibility: hidden;
+    margin-left:32.5%;
+    bottom:0%;
+    width : 35%;
+  }
+  
+  #tap{
+    position:fixed;
+    visibility: hidden;
+    margin-left:32.5%;
+    bottom:50%;
+    width : 35%;
+  }
+  
+  #quppelogo {
+    margin: 6px;
+    width: 30%;
+    height: 20%;
+    margin-bottom:14%;
+  }
+  
+  #startdiv {
+    /*background-image: url('assets/bg_splashscreen.png');*/
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 100% 100%;
+    width : 100%;
+    height : 100%;
+    position:absolute;
+    display:none;
+    top:0%;
+    bottom:20%;
+    left:0%;
+  }
+  
+  #header_block {
+     left: 10%;
+      position: absolute;
+      bottom:0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      text-align: center;
+    
+   
+     /*height:100px;*/
+     /* width:500px;*/
+    
+     
+  }
+  
+  .header_item {
+      display:inline-block;
+      vertical-align:bottom;
+      bottom:0;
+      font-size:20px;
+  }
+  
+  .header_item1 {
+      display:inline-block;
+      vertical-align:bottom;
+      margin-bottom:-7%;
+      font-size:20px;
+  }
+  
+  #startlogo{
+    display: block;
+    margin-top:30%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 60%;
+  }
+  
+  /*#startbtn{*/
+  /*  position: absolute;*/
+  /*  margin-top:0%;*/
+  /*  margin-left:0%;*/
+  /*  margin-bottom:5%;*/
+  /*  width:40px;*/
+  /*  height:30px;*/
+  /*}*/
+  #startbtn{
+    display:inline-block;
+    margin-left:center;
+      vertical-align:bottom;
+      margin-bottom:5%;
+      font-size:40px;
+  
+      
+  }
+  
+  #score{
+    position: absolute;
+    color : white;
+    top : 11.6%;
+    right : 6%;
+    visibility: hidden;
+    width : 13%;
+  }
+  
+  
+  
+  
+  
+  
+  
