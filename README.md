@@ -1,16 +1,15 @@
 #Football-Shooting-AR
 
 *This is the screen player sees when the game loads up. player has to click on the ready button to start playing
-![photo1](https://user-images.githubusercontent.com/74761614/120649756-bc69f380-c49a-11eb-87d8-ccd5a0abcae5.jpg)
-
+<!-- 
 img[alt=photo1] {
   width: 13%;
   height: 550px;
   border: none;
   background: none;
-}
+} -->
 
-<img id="Logo"  width="20px" src="https://user-images.githubusercontent.com/74761614/120649756-bc69f380-c49a-11eb-87d8-ccd5a0abcae5.jpg">
+<img id="Logo"  width="25%" height="550px" margin="10px" src="https://user-images.githubusercontent.com/74761614/120649756-bc69f380-c49a-11eb-87d8-ccd5a0abcae5.jpg">
 
 
 *Once the user clicks they can shoot the ball and try to basket them
