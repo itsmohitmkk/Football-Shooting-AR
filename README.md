@@ -10,6 +10,10 @@ img[alt=photo1] {
   background: none;
 }
 
+<img id="Logo" src="https://user-images.githubusercontent.com/74761614/120649756-bc69f380-c49a-11eb-87d8-ccd5a0abcae5.jpg"
+style=" z-index: 10; width:10%">
+
+
 *Once the user clicks they can shoot the ball and try to basket them
 ![photo_2021-06-03_18-36-39](https://user-images.githubusercontent.com/74761614/120649772-c12ea780-c49a-11eb-97b3-426d5d6fcb59.jpg)
 
