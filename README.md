@@ -8,7 +8,7 @@
 *Once the user clicks they can shoot the ball and try to basket them
 &nbsp;&nbsp;&nbsp;
 
-<img  width="32%" height="300px" padding-left:20px" src="https://user-images.githubusercontent.com/74761614/120649772-c12ea780-c49a-11eb-97b3-426d5d6fcb59.jpg">
+<img  width="32%" height="300px" padding-left="20px" src="https://user-images.githubusercontent.com/74761614/120649772-c12ea780-c49a-11eb-97b3-426d5d6fcb59.jpg">
 &nbsp;
 *When the user successfully baskets they get a +1 score and a bell sound signifing they did hit the ball
 &nbsp;&nbsp;&nbsp;
