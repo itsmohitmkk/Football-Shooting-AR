@@ -1,29 +1,25 @@
-// Component that places trees where the ground is clicked
 let isclicked = false
 let secondclick = false
 let totalthrown = 0
-
+ 
 export const tapPlaceComponent = {
   init() {
+
     const placeobj = document.getElementById('placeobj')
     const footballground = document.getElementById('footballground')
-    const finaldiv = document.getElementById('finaldiv')
     const startdiv = document.getElementById('startdiv')
     const plus1 = document.getElementById('plus1')
     const logo = document.getElementById('Logo')
     const plate = document.getElementById('footballball')
     
-    const misscount = document.getElementById('miss')
     const hitcount = document.getElementById('hit')
     
      const ele = document.getElementById('TimerAnim')
-    const elem = document.getElementById('timerDiv')
     const score = document.getElementById('score')
-    const tap = document.getElementById('tap')
-    let newElemen
-    let intial4
+   
     let newElement
-    // tap.style.visibility = 'visible'
+
+    // When "rEADy" in clicked event start (startbtn = redy)
     startdiv.style.display = 'block'
     const startbtn = document.getElementById('startbtn')
     startbtn.addEventListener('click', (eve) => {
@@ -38,9 +34,10 @@ export const tapPlaceComponent = {
     let hit
     // console.log('isclicked before event', isclicked)
 
-    // whenever user taps on placeobj we put bowls in that position
+    // whenever user taps on placeobj (click here to place)
+
     placeobj.addEventListener('click', (event) => {
-      if (!isclicked && !secondclick) {
+      
         // remove placeobj sprite
         placeobj.setAttribute('visible', 'false')
         footballground.setAttribute('visible', 'true')
@@ -75,21 +72,15 @@ export const tapPlaceComponent = {
         miss.style.right = '7%'
    
         document.body.appendChild(miss)
-        // ---------------------------spawn net-------------------------------------------
-        // console.log('isclicked before event', isclicked)
-        // The raycaster gives a location of the touch in the scene
-        // put net ground andgoal kepper at ray cadst position
-
+        
         
         const touchPoint = event.detail.intersection.point
-         const netpos = new THREE.Vector3(0, -8, -60)
-         netpos.sub(touchPoint)
+        //PlACE GROUND BY SUBSTACTING X , Y , X 
+        const netpos = new THREE.Vector3(0, -8, -60)
+        netpos.sub(touchPoint)
         console.log(netpos)
         netpos.x = 0
         newElement = document.createElement('a-entity')
-    
-
-        // ------------------------ goal keeper is spawned in random location in front of goal------
 
        
         newElement.setAttribute('position', netpos)
@@ -116,42 +107,34 @@ export const tapPlaceComponent = {
           newElement.setAttribute('visible', 'true')
           isclicked = true
         })
-      }
+      
     })
     
   
-    // -------------------------------------------------toss----------------------------------------
+    // -------------------------------------------------eVERYTHING LOADED ----------------------------------------
     const camera = document.getElementById('camera')
-    const splatSnd = document.querySelector('#splat').components.sound
+    const splatSnd = document.querySelector('#splat').components.sound // Sound on miss && throwing ball
     const scoredsnd = document.querySelector('#scoredsound').components.sound
-    const touchstart = new THREE.Vector3(0, 0, 0)
-    const touchend = new THREE.Vector3(0, 0, 0)
-    const direction = new THREE.Vector3(0, 0, 0)
+    const touchstart = new THREE.Vector3(0, 0, 0) // start of swipe
+    const touchend = new THREE.Vector3(0, 0, 0)   // end of swipe
+    const direction = new THREE.Vector3(0, 0, 0) // substract and normalize to get directions
 
     // --------------------------------touch start------------------------------------------------
     // touch start event to get initial touch pos
     // is clicked is there cauz we want to ignore frst ever tap
     this.el.sceneEl.addEventListener('touchstart', (event) => {
-      // console.log(isclicked)
-      if (isclicked) {
-        secondclick = true
         touchstart.x = event.changedTouches[0].clientX
         touchstart.y = event.changedTouches[0].clientY
         touchstart.z = 0
-        // console.log(touchstart)
-      }
-    }, false)
+    })
 
     // ----------------------------------touch end------------------------------------------------
     // touch end to get last touch position and to calculate direction
-    let colideCheck = true
+    
     this.el.sceneEl.addEventListener('touchend', (event) => {
       // console.log(isclicked)
-      if (colideCheck === true) {
-        if (isclicked) {
-         
-       
-
+       // Assume it collided 
+      
           touchend.x = event.changedTouches[0].clientX
           touchend.y = event.changedTouches[0].clientY
           touchend.z = 0
@@ -180,7 +163,6 @@ export const tapPlaceComponent = {
           // Set velocity, rotated with camera direction
           const velocity = new THREE.Vector3(-direction.x, 5.1, -6.5)
           velocity.multiplyScalar(4)
-          velocity.applyQuaternion(camera.object3D.quaternion)
           tomato.setAttribute('velocity', velocity)
           // Add physics body
           tomato.setAttribute('body', {
@@ -199,11 +181,11 @@ export const tapPlaceComponent = {
 
           // -----------------------------collision----------------------------------------------
           let didCollide = false
-          let flag = true;
+        
           tomato.addEventListener('collide', (even) => {
           // when its not ground it is our bowl
 
-            // ------------------------------collide with net----------------------------------------
+            // ------------------------------collide with bucket----------------------------------------
             if (even.detail.body.el.id === 'bucket') {
 
                console.log('ballpos', tomato.object3D.position)
@@ -212,15 +194,13 @@ export const tapPlaceComponent = {
                 const yposition = tomato.object3D.position.y
               // console.log('bucketpos' , bucket.object3D.position)
 
-            if(yposition>-0.5){
-
               didCollide = true
               colideCheck = true
 
               console.log('ballpos', tomato.object3D.position)
               tomato.parentNode.removeChild(tomato)
               hitno++
-              flag = false;
+            
               hitcount.innerHTML = `${hitno}`
               // increase hit
               if (hitno < 10) {
@@ -233,14 +213,14 @@ export const tapPlaceComponent = {
               setTimeout(() => {
                 plus1.style.display = 'none'
               }, 200)
+               
               splatSnd.stopSound()
               splatSnd.playSound()
-            }
             
             } 
             // ------------------------------collide with ground--------------------------------------
             else if (even.detail.body.el.id === 'ground') {
-              flag = false;
+              
               didCollide = true
               colideCheck = true
               setTimeout(() => {
@@ -264,10 +244,7 @@ export const tapPlaceComponent = {
 
             
           })
-        }
-      } else {
-        colideCheck = true
-      }
+      
     })
   },
 }
